@@ -5,11 +5,16 @@ module.exports = defineConfig({
     // baseUrl, etc
     supportFile: false,
     fixturesFolder: false,
+    video: false,
     setupNodeEvents(on, config) {
       // implement node event listeners here
       // and load any plugins that require the Node environment
-      on('before:run', console.log.bind(console, 'before run 1'))
-      on('before:run', console.log.bind(console, 'before run 2'))
+      on('before:run', () => {
+        console.log('before run 1')
+      })
+      on('before:run', () => {
+        console.log('before run 2')
+      })
       // each spec
       on('after:spec', (a) => {
         console.log('after spec 1', a.relative)
@@ -21,8 +26,12 @@ module.exports = defineConfig({
         console.log('after spec 3', a.relative)
       })
       // run finished
-      on('after:run', console.log.bind(console, 'after run 1'))
-      on('after:run', console.log.bind(console, 'after run 2'))
+      on('after:run', () => {
+        console.log('after run 1')
+      })
+      on('after:run', () => {
+        console.log('after run 2')
+      })
     },
   },
 })
