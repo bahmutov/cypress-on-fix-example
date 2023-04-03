@@ -6,7 +6,8 @@ module.exports = defineConfig({
     supportFile: false,
     fixturesFolder: false,
     video: false,
-    setupNodeEvents(on, config) {
+    setupNodeEvents(cypressOn, config) {
+      const on = require('cypress-on-fix')(cypressOn)
       // implement node event listeners here
       // and load any plugins that require the Node environment
       on('before:run', () => {
