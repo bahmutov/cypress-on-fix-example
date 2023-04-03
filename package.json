@@ -4,7 +4,8 @@
   "description": "Example using cypress-on-fix plugin",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run"
+    "test": "cypress run",
+    "badges": "npx -p dependency-version-badge update-badge cypress cypress-on-fix"
   },
   "repository": {
     "type": "git",
